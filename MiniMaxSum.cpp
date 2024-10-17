@@ -6,9 +6,9 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
-int sum(vector<int> arr);
-int getMin(vector<int> arr);
-int getMax(vector<int> arr);
+unsigned long int sum(vector<int> arr);
+unsigned long int getMin(vector<int> arr);
+unsigned long int getMax(vector<int> arr);
 
 /*
  * Complete the 'miniMaxSum' function below.
@@ -17,15 +17,15 @@ int getMax(vector<int> arr);
  */
 
 void miniMaxSum(vector<int> arr) {
-    int total = sum(arr);
-    int minSum = total - getMax(arr);
-    int maxSum = total - getMin(arr);
+    unsigned long int total = sum(arr);
+    unsigned long int minSum = total - getMax(arr);
+    unsigned long int maxSum = total - getMin(arr);
     
     cout << minSum << " " << maxSum << endl;
 }
 
-int sum(vector<int> arr){
-    int total = 0;
+unsigned long int sum(vector<int> arr){
+    unsigned long int total = 0;
     for (int i = 0; i < arr.size(); i++){
         total += arr[i];
     }
@@ -33,8 +33,8 @@ int sum(vector<int> arr){
     return total;
 }
 
-int getMax(vector<int> arr){
-    int max = 0;
+unsigned long int getMax(vector<int> arr){
+    unsigned long int max = 0;
     for (int i = 0; i < arr.size(); i++){
         if (arr[i] > max) max = arr[i];
     }
@@ -42,8 +42,8 @@ int getMax(vector<int> arr){
     return max;
 }
 
-int getMin(vector<int> arr){
-    int min = numeric_limits<int>::max();
+unsigned long int getMin(vector<int> arr){
+    unsigned long int min = numeric_limits<unsigned long int>::max();
     for (int i = 0; i < arr.size(); i++){
         if (arr[i] < min) min = arr[i];
     }
